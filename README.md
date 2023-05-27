@@ -22,7 +22,7 @@ Project Task Requirements
 - Make their own recipes and store that in their favoured recipes
 
 ○ stretch requirements (plan to complete at least 1!)
-- used chatGPT for recipes on the internet
+- use chatGPT for recipes on the internet
 - Remind user of soon-to-expire ingredients
 - Automate reduction of ingredients (user profile)
 
