@@ -8,7 +8,7 @@ The website will be for hungry people who are in need of recipe ideas. It will g
 
 Project Task Requirements
 ○ minimal requirements (will definitely complete) 
-- use API calls to a website to get recipe 
+- use API calls to a website to get recipe (https://developer.edamam.com/edamam-recipe-api)
 - Skip a recipe 
 - Store favoured recipes 
 - User profile - with just their favoured recipes 
