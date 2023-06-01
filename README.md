@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+CPSC455Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CPSC 455 group project: What Should I Eat
 
-## Available Scripts
+Project Description:
 
-In the project directory, you can run:
+The website will be for hungry people who are in need of recipe ideas. It will generate random recipes or based on what ingredients the user currently has. It will store recipes that have been recommended to the user previously and ingredients the user currently has. They can choose the recipe recommended or choose to skip it. Some additional functionality could be best before dates for ingredients (reminds the user to use them before they expire).
 
-### `npm start`
+Project Task Requirements ○ minimal requirements (will definitely complete)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    use API calls to a website to get recipe (https://developer.edamam.com/edamam-recipe-api)
+    Skip a recipe
+    Store favoured recipes
+    User profile - with just their favoured recipes
+    Recommend a recipe from favoured recipes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+○ "standard" requirements (will most likely complete)
 
-### `npm test`
+    Setting up the webpage to take user input (add ingredients and it will output a recipe based on those ingredients)
+    select what type of cuisine/ingredient and filter based on that
+    Exclude allergies
+    User profile - with ingredients, recipes
+    Make their own recipes and store that in their favoured recipes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+○ stretch requirements (plan to complete at least 1!)
 
-### `npm run build`
+    use chatGPT for recipes on the internet
+    Remind user of soon-to-expire ingredients
+    Automate reduction of ingredients (user profile)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Project Task Breakdown
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    use API calls to websites to get recipe
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Choose an API
+    Get it working on command line (ensure backend is working correctly)
+    Manipulate the json
+    Populate the frontend with the resulting json
 
-### `npm run eject`
+    Favourited recipes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    Store user ID + recipe in cache/temp storage
+    Favourite button calls backend?
+    Move recipe from cache/temp storage into user storage/recipe storage pk recipe/fk user?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Protocol
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+image
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+image
