@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { connect } from 'react-redux'
+import * as actions from './actions';
 
-export function Login() {
+
+function Login({dispatch}) {
     const [input, setInput] = useState({});
 
     const handleChange = (e) => {
@@ -8,14 +11,18 @@ export function Login() {
     }
 
     const handleSubmit = (e) => {
-
-    }
+        e.preventDefault();
+        dispatch({
+          type: actions.ADD_USERNAME,
+          username: input.username,
+        })
+      }
 
     return (
         <div className="loginform">
             <form onSubmit={handleSubmit}>
                 <label>Username:
-                    <input type="text" name="username" value={input.username} onChange={handleChange} />
+                    <input id="username" type="text" name="username" value={input.username} onChange={handleChange} />
                 </label>
                 <label>Password:
                     <input type="text" name='password' value={input.password} onChange={handleChange} />
@@ -25,3 +32,5 @@ export function Login() {
         </div>
     )
 }
+
+export default connect()(Login);
