@@ -2,13 +2,14 @@ import './styles/App.css';
 import Login from './components/Login.js'
 import RecipeCard from './components/recipeCard.js';
 import ProfilePreview from './components/ProfilePreview';
+import GenerateButton from './components/GenerateButton';
 import { connect } from 'react-redux'
 
 function App({ dispatch, username }) {
   return (
     <div className='Frontpage'>
       <div className="App">
-        <button id="generatebutton">Generate Recipe</button>
+        <GenerateButton />
         <RecipeCard title="TestRecipe" image="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fpublic-assets.meredithcorp.io%2Ff926647f3c831a8bb7a3024468adfd8f%2F1683320006286CKN.jpg&q=60&c=sc&orient=true&poi=auto&h=512" description="Very yummy looking chicken" />
       </div>
       <Login />
