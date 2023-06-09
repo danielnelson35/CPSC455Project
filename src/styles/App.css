@@ -78,6 +78,22 @@
   transition-duration: 0.5s;
 }
 
+.loggedinbutton {
+  background-color: #0080FE;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  transition-duration: 0.5s;
+}
+
 input[type=text] {
   width: 100%;
   padding: 12px 20px;
