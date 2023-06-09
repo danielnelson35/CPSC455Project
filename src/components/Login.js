@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import * as actions from './actions';
+import * as actions from 'actions/actions';
 
 
-function Login({dispatch}) {
+function Login({ dispatch }) {
     const [input, setInput] = useState({});
 
     const handleChange = (e) => {
-        setInput({...input,[e.target.name] : e.target.value});
+        setInput({ ...input, [e.target.name]: e.target.value });
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch({
-          type: actions.ADD_USERNAME,
-          username: input.username,
+            type: actions.ADD_USERNAME,
+            username: input.username,
         })
-      }
+    }
 
     return (
         <div className="loginform">
@@ -27,7 +27,7 @@ function Login({dispatch}) {
                 <label>Password:
                     <input type="text" name='password' value={input.password} onChange={handleChange} />
                 </label>
-                <input className='loginbutton' type='submit' value="Login"/>
+                <input className='loginbutton' type='submit' value="Login" />
             </form>
         </div>
     )

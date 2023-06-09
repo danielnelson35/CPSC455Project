@@ -1,8 +1,8 @@
-import * as actions from './actions';
+import * as actions from 'actions/actions.js';
 
 const initialState = {
     username: null
-  }
+}
 
 export default function listReducer(state = initialState, action) {
     switch (action.type) {
