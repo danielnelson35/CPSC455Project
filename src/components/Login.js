@@ -27,7 +27,7 @@ function Login({ dispatch }) {
                 <label>Password:
                     <input type="text" name='password' value={input.password} onChange={handleChange} />
                 </label>
-                <input className='loginbutton' type='submit' value="Login" />
+                <input className='homepageButton' type='submit' value="Login" />
             </form>
         </div>
     )
