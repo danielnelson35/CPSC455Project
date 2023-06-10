@@ -1,6 +1,6 @@
 const GenerateButton = () => {
   return (
-    <button id="generatebutton">Generate Recipe</button>
+    <button id="generatebutton" className="homepageButton" >Generate Recipe</button>
   )
 }
 

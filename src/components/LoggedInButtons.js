@@ -1,10 +1,10 @@
-const loggedInButtons = () => {
+const LoggedInButtons = () => {
     return (
-        <div> 
-            <button class="loggedinbutton">Add to Favourites</button>
-            <button class="loggedinbutton">Skip Recipe</button>
+        <div>
+            <button class="homepageButton">Add to Favourites</button>
+            <button class="homepageButton">Skip Recipe</button>
         </div>
     )
-  }
+}
 
-  export default loggedInButtons;
+export default LoggedInButtons;
