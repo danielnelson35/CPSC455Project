@@ -1,8 +1,8 @@
 const LoggedInButtons = () => {
     return (
         <div>
-            <button class="homepageButton">Add to Favourites</button>
-            <button class="homepageButton">Skip Recipe</button>
+            <button className="homepageButton">Add to Favourites</button>
+            <button className="homepageButton">Skip Recipe</button>
         </div>
     )
 }

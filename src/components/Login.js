@@ -4,7 +4,11 @@ import { SET_USERNAME } from 'redux/actions/actions';
 
 
 function Login({ dispatch }) {
-    const [input, setInput] = useState({});
+    const [input, setInput] = useState(
+        {
+            username: "",
+            password: ""
+        });
 
     const handleChange = (e) => {
         setInput({ ...input, [e.target.name]: e.target.value });
