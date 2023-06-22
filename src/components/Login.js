@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import * as actions from 'actions/actions';
+import { SET_USERNAME } from 'redux/actions/actions';
 
 
 function Login({ dispatch }) {
@@ -12,10 +12,7 @@ function Login({ dispatch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch({
-            type: actions.ADD_USERNAME,
-            username: input.username,
-        })
+        dispatch(SET_USERNAME(input.username))
     }
 
     return (
