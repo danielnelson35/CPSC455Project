@@ -65,10 +65,13 @@ const userStore = createSlice({
         },
         setUserImage: (state, action) => {
             state.user.userImageLink = action.payload
+        },
+        addRecipe: (state, action) => {
+            state.user.favouriteRecipes.push(action.payload);
         }
     },
     extraReducers: (builder) => { } // For thunks
 });
 
-export const { setUsername, setUserImage } = userStore.actions
+export const { setUsername, setUserImage, addRecipe } = userStore.actions
 export default userStore;
