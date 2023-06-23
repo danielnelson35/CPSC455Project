@@ -2,8 +2,7 @@ import { useSelector } from "react-redux";
 
 // props can have: title, image, description
 export default function RecipeCard() {
-    const recipe = useSelector(state => state.recipe);
-    console.log('recipe', recipe);
+    const recipe = useSelector(state => state.recipeStore.recipe);
     if (!recipe) {
         return (
             <></>

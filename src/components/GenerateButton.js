@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { FIND_RECIPE } from "redux/actions/actions";
 
 const GenerateButton = () => {
-  const recipe = useSelector(state => state.recipe);
-  const [chooseRecipe, setChooseRecipe] = useState(null);
 
   const dispatch = useDispatch();
 

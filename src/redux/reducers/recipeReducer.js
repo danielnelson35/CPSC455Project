@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const INITIAL_STATE = {}
+const INITIAL_STATE = undefined;
 
 const recipe = [
     {
@@ -33,7 +33,7 @@ const recipe = [
     },
     {
         title: "Creamy peppercorn-Parmesan dressing",
-        image: "",
+        image: "https://homeinthefingerlakes.com/wp-content/uploads/2020/01/pepper-parm-salad-dressing-0369-720x720.jpg.webp",
         ingredients: [
             "1 cup buttermilk",
             "1/2 cup sour cream",
@@ -54,7 +54,6 @@ const recipeStore = createSlice({
     reducers: {
         findRecipe: (state, action) => {
             state.recipe = recipe[action.payload];
-            console.log('state.recipe', state.recipe);
         }
     },
     extraReducers: (builder) => { }
