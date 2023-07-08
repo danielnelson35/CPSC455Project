@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "start_legacy": "nodemon -L index.js",
+    "legacy": "nodemon -L index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2"
   },
