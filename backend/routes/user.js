@@ -1,8 +1,9 @@
+require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 
-const connectionURI = "mongodb+srv://teamrecipe:TeamRecipeDB1@sandbox.ykog5qj.mongodb.net/?retryWrites=true&w=majority";
-const dbName = "TeamRecipe";
+const connectionURI = process.env.connectionURI || "";
+const dbName = process.env.dbName || "";
 const collectionName = "User";
 
 const client = new MongoClient(connectionURI);
