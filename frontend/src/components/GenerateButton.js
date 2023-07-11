@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FIND_RECIPE } from "redux/actions/actions";
+import { getRecipeAsync } from "redux/thunks/recipeThunks";
 
 const GenerateButton = () => {
 
@@ -8,7 +8,7 @@ const GenerateButton = () => {
 
   const handleCLick = (e) => {
     e.preventDefault();
-    dispatch(FIND_RECIPE(Math.floor(Math.random() * 3)));
+    dispatch(getRecipeAsync());
   }
 
   return (
