@@ -1,17 +1,32 @@
-require('dotenv').config();
 var express = require('express');
 var router = express.Router();
 
-const connectionURI = process.env.connectionURI || "";
-const dbName = process.env.dbName || "";
-const collectionName = "Recipes";
-
-const client = new MongoClient(connectionURI);
-var db = client.db(dbName);
-const collection = db.collection(collectionName);
-
 router.get('/', async (req, res, next) => {
-    res.status(200).send(await collection.find().toArray());
+    const recipe = await getAPIRecipe();
+    return res.status(200).send(recipe);
 })
+
+const getAPIRecipe = async () => {
+    const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php', {
+        method: 'GET'
+    });
+    const responseData = await response.json();
+    const data = responseData.meals[0];
+    const ingredientsList = [];
+    for (let i = 1; i <= 20; i++) {
+        if (data[`strIngredient${i}`]) {
+            ingredientsList.push(`${data[`strMeasure${i}`]} ${data[`strIngredient${i}`]}`);
+        } else {
+            break;
+        }
+    }
+    const item = {
+        title: data.strMeal,
+        image: data.strMealThumb,
+        ingredients: ingredientsList,
+        directions: data.strInstructions
+    };
+    return Promise.resolve(item);
+};
 
 module.exports = router;

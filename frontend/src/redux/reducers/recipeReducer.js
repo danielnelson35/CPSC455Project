@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getRecipeAsync } from 'redux/thunks/recipeThunks';
+import { REQUEST_STATE } from 'redux/utils';
 
-const INITIAL_STATE = undefined;
+const INITIAL_STATE = {
+    recipe: null,
+    getRecipe: REQUEST_STATE.IDLE,
+    error: null
+};
 
 const recipe = [
     {
@@ -48,15 +54,23 @@ const recipe = [
 
 const recipeStore = createSlice({
     name: "recipe",
-    initialState: {
-        recipe: INITIAL_STATE
-    },
-    reducers: {
-        findRecipe: (state, action) => {
-            state.recipe = recipe[action.payload];
-        }
-    },
-    extraReducers: (builder) => { }
+    initialState: INITIAL_STATE,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+        .addCase(getRecipeAsync.pending, (state) => {
+            state.getRecipe = REQUEST_STATE.PENDING;
+            state.error = null;
+        })
+        .addCase(getRecipeAsync.fulfilled, (state, action) => {
+            state.getRecipe = REQUEST_STATE.FULFILLED;
+            state.recipe = action.payload;
+        })
+        .addCase(getRecipeAsync.rejected, (state, action) => {
+            state.getRecipe = REQUEST_STATE.REJECTED;
+            state.error = action.error;
+        });
+    }
 });
 
 export const { findRecipe } = recipeStore.actions
