@@ -51,3 +51,5 @@ router.delete('/delete', async (req, res, next) => {
 
     return res.status(200).send(true);
 })
+
+module.exports = router;
