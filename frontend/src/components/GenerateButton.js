@@ -12,7 +12,7 @@ const GenerateButton = () => {
   }
 
   return (
-    <button id="generatebutton" className="homepageButton" onClick={handleCLick}>Generate Recipe</button>
+    <button id="generatebutton" className="generateRecipeButton" onClick={handleCLick}>Generate Recipe</button>
   )
 }
 
