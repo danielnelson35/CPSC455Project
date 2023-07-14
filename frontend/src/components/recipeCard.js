@@ -12,10 +12,16 @@ export default function RecipeCard() {
         <div className="RecipeCard">
             <h2> {recipe.title} </h2>
             <img src={recipe.image} alt="Recipe" />
-            {recipe.ingredients.length > 0 && recipe.ingredients.map((ingredient) => (
-                <div>{ingredient}</div>
-            ))}
-            <div> {recipe.directions} </div>
+            <div class="ingredients">
+                <h3>Ingredients</h3>
+                {recipe.ingredients.length > 0 && recipe.ingredients.map((ingredient) => (
+                    <div>{ingredient}</div>
+                ))}
+            </div>
+            <div class="instructions">
+                <h3>Directions</h3>
+                <div className="steps"> {recipe.directions} </div>
+            </div>
         </div>
     )
 }
