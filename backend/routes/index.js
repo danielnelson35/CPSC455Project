@@ -10,19 +10,18 @@ router.get('/', (req, res, next) => {
 router.post('/login', async (req, res, next) => {
     let body = req.body;
 
-    let username = body.username
+    let username = body.username;
 
-    let user = {};
     //TODO: check if user exists and login else
+    let user = await queries.getUser(username); // TODO: error handling
 
-    let exists = true;
+    let exists = (user) ? true : false;
 
-    if (!exists) {
-        user = await queries.addUser(body); // TODO: error handling
+    if (exists) {
         return res.status(200).send(user);
+    } else {
+        return res.status(400).send({ error: "User doesn't exist" });
     }
-
-    return res.status(200).send(user)
 });
 
 router.post('/logout', async (req, res, next) => {
