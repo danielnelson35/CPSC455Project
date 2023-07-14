@@ -1,22 +1,14 @@
 .Frontpage {
-  background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: left;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App {
-  background-color: #282c34;
+  background-color: #e2f0f9;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: calc(10px + 2vmin);
   text-align: center;
-  color: white;
 }
 
 .RecipeCard {
@@ -24,7 +16,10 @@
   padding-bottom: 50px;
   margin: 50px;
   border: 1px black solid;
-  background-color: gray;
+  background-color: #ffffff;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .RecipeCard img {
@@ -32,19 +27,20 @@
 }
 
 .homepageButton {
-  background-color: #0080FE;
+  background-color: #286fb4;
   border: none;
   color: white;
-  padding: 15px 32px;
-  width: 50%;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 18px;
   transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  padding: 5px;
+  margin-bottom: 6px;
+  width: 10%;
 }
 
 .homepageButton:hover {
@@ -52,19 +48,33 @@
   color: black;
 }
 
+.generateRecipeButton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-right: 50px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.generateRecipeButton:hover {
+  background-color: white;
+  color: black;
+}
+
 .loginform {
-  padding-top: 50px;
-  display: grid;
-  margin: 50px;
-  grid-template-columns: 1fr 1fr;
-  flex-direction: column;
-  width: 50vw;
+  width: 75%;
+  padding-left: 10px
 }
 
 .loginbutton {
-  background-color: #0080FE;
-  border: none;
-  color: white;
   padding: 15px 32px;
   width: 50%;
   text-align: center;
@@ -78,9 +88,6 @@
 }
 
 .loggedinbutton {
-  background-color: #0080FE;
-  border: none;
-  color: white;
   padding: 15px 32px;
   width: 50%;
   text-align: center;
@@ -94,8 +101,92 @@
 }
 
 input[type=text] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 90%;
+  padding: 5px 10px;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
+.loginformForm {
+  display: flex;
+}
+
+.card {
+  width: 25%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#top {
+  display: flex;
+  background-color: #b0dde4;
+}
+
+.left {
+  width: 35%;
+  margin-top: 45px;
+}
+
+.right {
+  width: 65%;
+}
+
+.favouritebutton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 6px;
+  margin-left: 40px;
+}
+
+
+.favouritebutton:hover {
+  background-color: white;
+  color: black;
+}
+
+.favourites {
+  border: 1px solid black;
+  padding: 50px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 50px;
+  margin-left: 45px;
+  background-color: #ffffff;
+}
+
+.instructions {
+  border: 1px solid white;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.ingredients{
+  font-size: 22px;
+}
+
+h2 {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }

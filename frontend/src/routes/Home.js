@@ -8,14 +8,22 @@ import { useSelector } from 'react-redux';
 export default function Home() {
     let username = useSelector(state => state.userStore.user.username)
     return (
-    <div className='Frontpage'>
-      <div className="App">
-        <GenerateButton />
-        <RecipeCard />
+    <div className='container'>
+      <div id="top">
+        {<Login />}
+        <ProfilePreview />
       </div>
-      {!username && <Login />}
-      {username && <LoggedInButtons />}
-      <ProfilePreview />
+      <div className='Frontpage'>
+        <div className="App">
+          <div className='left'>
+          {<LoggedInButtons />}
+          </div>
+          <div className='right'>
+            <GenerateButton />
+            <RecipeCard />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

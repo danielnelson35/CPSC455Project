@@ -12,15 +12,28 @@ const LoggedInButtons = () => {
         dispatch(ADD_RECIPE(recipe));
     }
 
-    return (
-        <div>
-            <button className="homepageButton" onClick={handleClick}>Add to Favourites</button>
-            <div>{user.username}</div>
-            {user.favouriteRecipes.length > 0 && user.favouriteRecipes.map((recipe) => (
-                <div>{recipe.title}</div>
-            ))}
-        </div>
-    )
+    if (user.username) {
+        return (
+            <div>
+                <button className="favouritebutton" onClick={handleClick}>Add to Favourites</button>
+                <div className="favourites">{user.favouriteRecipes.length > 0 && user.favouriteRecipes.map((recipe) => (
+                    <div>{recipe.title}</div>
+                ))}
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+            <p class="single-line">Login to see favourites</p>
+    </div>
+        )
+
+    
+
+    }
+
+    
 }
 
 export default LoggedInButtons;
