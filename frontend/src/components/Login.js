@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import { SET_USERNAME } from 'redux/actions/actions';
+import * as userThunks from 'redux/thunks/userThunks'
 import { useSelector } from "react-redux";
 
 
@@ -17,7 +17,7 @@ function Login({ dispatch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(SET_USERNAME(input.username))
+        dispatch(userThunks.login(input))
     }
 
     let user = useSelector(state => state.userStore.user);

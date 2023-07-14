@@ -27,5 +27,5 @@ function setupRoutes() {
 
     app.use('/', indexRouter);
     app.use('/recipes', recipeRouter);
-    app.use('/user', userRouter)
+    app.use('/users', userRouter)
 }

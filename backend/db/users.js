@@ -23,7 +23,8 @@ const queries = {
         return user;
     },
     getRecipes: async function (username) {
-        const recipes = await db.collection(collectionName).findOne({username: username}).favouriteRecipes;
+        const user = await db.collection(collectionName).findOne({username: username});
+        const recipes = user.favouriteRecipes;
         return recipes;
     },
     addRecipe: async function (username, recipe) {

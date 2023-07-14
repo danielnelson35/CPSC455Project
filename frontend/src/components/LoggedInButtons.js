@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ADD_RECIPE } from "redux/actions/actions";
+import { useEffect } from "react";
+import * as userActions from "redux/thunks/userThunks";
+import DeleteButton from "./DeleteButton";
 
 const LoggedInButtons = () => {
     const user = useSelector(state => state.userStore.user);
@@ -7,17 +9,24 @@ const LoggedInButtons = () => {
 
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (user.username) {
+            dispatch(userActions.getFavouriteRecipes(user.username));
+        }
+    }, [])
+
     const handleClick = (e) => {
         e.preventDefault();
-        dispatch(ADD_RECIPE(recipe));
+        dispatch(userActions.addFavouriteRecipe([user.username, recipe]));
     }
 
     if (user.username) {
+        
         return (
             <div>
                 <button className="favouritebutton" onClick={handleClick}>Add to Favourites</button>
                 <div className="favourites">{user.favouriteRecipes.length > 0 && user.favouriteRecipes.map((recipe) => (
-                    <div>{recipe.title}</div>
+                    <DeleteButton recipe={recipe} />
                 ))}
                 </div>
             </div>
@@ -28,9 +37,6 @@ const LoggedInButtons = () => {
             <p class="single-line">Login to see favourites</p>
     </div>
         )
-
-    
-
     }
 
     
