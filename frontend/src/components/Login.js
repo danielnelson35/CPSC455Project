@@ -24,7 +24,7 @@ function Login({ dispatch }) {
 
     if (!user.username) {
         return (
-    
+
             <div className="loginform">
                 <form className="loginformForm" onSubmit={handleSubmit}>
                     <label>Username:
@@ -39,12 +39,12 @@ function Login({ dispatch }) {
         )
     } else {
         return (
-            
+
             <div className="loginform">
 
-                <p class="single-line">Hello, {user.username}</p>
-        </div>
-            )
+                <p className="single-line">Hello, {user.username}</p>
+            </div>
+        )
     }
 }
 

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "redux/thunks/userThunks";
 
-const DeleteButton = (props) => {
+const RecipeItem = (props) => {
 
     const user = useSelector(state => state.userStore.user);
     const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const DeleteButton = (props) => {
         e.preventDefault();
         dispatch(userActions.deleteFavouriteRecipe([user.username, recipe.title]));
     }
-    
+
     return (
         <div>
             {recipe.title}
@@ -20,4 +20,4 @@ const DeleteButton = (props) => {
     )
 }
 
-export default DeleteButton;
+export default RecipeItem;

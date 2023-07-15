@@ -45,11 +45,9 @@ const userStore = createSlice({
                 state.deleteFavouriteRecipe = REQUEST_STATE.FULFILLED;
                 if (action.payload.response) {
                     state.user.favouriteRecipes = state.user.favouriteRecipes.filter((recipe) => {
-                        return recipe.title !== action.payload.recipename;
+                        return recipe?.title !== action.payload.recipename;
                     })
                 }
-
-                console.log(state.user.favouriteRecipes.length)
             })
             .addCase(deleteFavouriteRecipe.rejected, (state, action) => {
                 state.deleteFavouriteRecipe = REQUEST_STATE.REJECTED;
@@ -67,6 +65,7 @@ const userStore = createSlice({
                 state.getFavouriteRecipes = REQUEST_STATE.REJECTED;
                 state.error = action.payload;
             })
+
             .addCase(addFavouriteRecipe.pending, (state) => {
                 state.addFavouriteRecipe = REQUEST_STATE.PENDING;
             })

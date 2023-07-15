@@ -14,7 +14,7 @@ const deleteRecipe = async (username, recipename) => {
         username: username,
         recipename: recipename
     }
-    
+
     const response = await fetch('http://localhost:3001/users/favouriteRecipes/delete/', {
         method: 'DELETE',
         headers: {
@@ -29,7 +29,7 @@ const deleteRecipe = async (username, recipename) => {
 };
 
 const getRecipes = async (username) => {
-    const response = await fetch(`http://localhost:3001/users/all/${username}/`, {
+    const response = await fetch(`http://localhost:3001/users/favouriteRecipes/all/${username}/`, {
         method: 'GET'
     });
     return response.json();
