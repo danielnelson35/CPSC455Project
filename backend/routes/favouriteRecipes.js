@@ -5,10 +5,14 @@ const queries = require('../db/users');
 router.post('/add', async (req, res, next) => {
     let body = req.body;
     let username = body.username;
-    let recipe = body.recipename;
+    let recipe = body.recipe;
+
+    if (!recipe) {
+        return res.status(400).send({ error: "Recipe must not be empty" });
+    }
 
     // TODO: do some validation + add to db
-    await queries.addRecipe(username, recipe);
+    recipe = await queries.addRecipe(username, recipe);
 
     return res.status(200)
         .setHeader('Content-Type', 'application/json')
@@ -34,7 +38,7 @@ router.get('/random/:username', async (req, res, next) => {
 
     // TODO: Get all favourite recipes from user. (Does mongo have its own get random?)
 
-    let recipe = recipes[Math.floor(Math.random() * items.length)]; // Maybe this should be moved to a util function
+    let recipe = recipes[Math.floor(Math.random() * recipes.length)]; // Maybe this should be moved to a util function
 
     return res.status(200)
         .setHeader('Content-Type', 'application/json')
@@ -47,9 +51,9 @@ router.delete('/delete', async (req, res, next) => {
     let recipename = body.recipename;
 
     // TODO: Delete recipe from user + error handling
-    await queries.deleteRecipe(username, recipename);
+    let numChanged = await queries.deleteRecipe(username, recipename);
 
-    return res.status(200).send(true);
+    return res.status(200).send({ recipesDeleted: numChanged });
 })
 
 module.exports = router;

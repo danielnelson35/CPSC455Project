@@ -11,7 +11,7 @@ var db = client.db(dbName);
 
 const queries = {
     getUser: async function (username) {
-        const user = await db.collection(collectionName).findOne({username: username});
+        const user = await db.collection(collectionName).findOne({ username: username });
         return user;
     },
     createUser: async function (user) {
@@ -19,22 +19,23 @@ const queries = {
         return user;
     },
     updateUser: async function (username, user) {
-        await db.collection(collectionName).replaceOne({username: username}, user);
+        await db.collection(collectionName).replaceOne({ username: username }, user);
         return user;
     },
     getRecipes: async function (username) {
-        const recipes = await db.collection(collectionName).findOne({username: username}).favouriteRecipes;
+        const user = await db.collection(collectionName).findOne({ username: username });
+        const recipes = user.favouriteRecipes;
         return recipes;
     },
     addRecipe: async function (username, recipe) {
-        await db.collection(collectionName).updateOne({ username: username },
-                                                      { $push: { favouriteRecipes: recipe } });
-        return recipe;
+        let ret = await db.collection(collectionName).updateOne({ username: username },
+            { $push: { favouriteRecipes: recipe } });
+        return { ...recipe, _id: ret.upsertedId };
     },
     deleteRecipe: async function (username, recipename) {
-        await db.collection(collectionName).updateOne({ username: username },
-                                                      { $pull: { favouriteRecipes: {title: recipename} } });
-        return recipename;
+        let res = await db.collection(collectionName).updateOne({ username: username },
+            { $pull: { favouriteRecipes: { title: recipename } } });
+        return res.modifiedCount;
     }
 }
 

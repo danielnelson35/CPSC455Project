@@ -20,7 +20,13 @@ router.post('/login', async (req, res, next) => {
     if (exists) {
         return res.status(200).send(user);
     } else {
-        return res.status(400).send({ error: "User doesn't exist" });
+        try {
+            body.favouriteRecipes = [];
+            let newUser = await queries.createUser(body);
+            return res.status(200).send(newUser);
+        } catch (e) {
+            return res.status(400).send(e);
+        }
     }
 });
 

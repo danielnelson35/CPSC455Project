@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux'
-import { SET_USERNAME } from 'redux/actions/actions';
+import * as userThunks from 'redux/thunks/userThunks'
 import { useSelector } from "react-redux";
 
 
@@ -17,14 +17,14 @@ function Login({ dispatch }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(SET_USERNAME(input.username))
+        dispatch(userThunks.login(input))
     }
 
     let user = useSelector(state => state.userStore.user);
 
     if (!user.username) {
         return (
-    
+
             <div className="loginform">
                 <form className="loginformForm" onSubmit={handleSubmit}>
                     <label>Username:
@@ -39,12 +39,12 @@ function Login({ dispatch }) {
         )
     } else {
         return (
-            
+
             <div className="loginform">
 
-                <p class="single-line">Hello, {user.username}</p>
-        </div>
-            )
+                <p className="single-line">Hello, {user.username}</p>
+            </div>
+        )
     }
 }
 
