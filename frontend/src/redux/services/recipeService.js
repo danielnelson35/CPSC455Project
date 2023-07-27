@@ -1,5 +1,8 @@
+require('dotenv').config();
+const apiURL = process.env.REACT_APP_APIURL || "";
+
 const getRecipe = async () => {
-    const response = await fetch('http://localhost:3001/recipes', {
+    const response = await fetch(`${apiURL}/recipes/`, {
         method: 'GET'
     });
     return response.json();

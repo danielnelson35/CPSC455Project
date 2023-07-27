@@ -1,5 +1,8 @@
+require('dotenv').config();
+const apiURL = process.env.REACT_APP_APIURL || "";
+
 const login = async (user) => {
-    const response = await fetch('http://localhost:3001/login/', {
+    const response = await fetch(`${apiURL}/login/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -15,7 +18,7 @@ const deleteRecipe = async (username, recipename) => {
         recipename: recipename
     }
 
-    const response = await fetch('http://localhost:3001/users/favouriteRecipes/delete/', {
+    const response = await fetch(`${apiURL}/users/favouriteRecipes/delete/`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -29,7 +32,7 @@ const deleteRecipe = async (username, recipename) => {
 };
 
 const getRecipes = async (username) => {
-    const response = await fetch(`http://localhost:3001/users/favouriteRecipes/all/${username}/`, {
+    const response = await fetch(`${apiURL}/users/favouriteRecipes/all/${username}/`, {
         method: 'GET'
     });
     return response.json();
@@ -40,7 +43,7 @@ const addToFavouriteRecipes = async (username, recipe) => {
         username: username,
         recipe: recipe
     }
-    const response = await fetch('http://localhost:3001/users/favouriteRecipes/add/', {
+    const response = await fetch(`${apiURL}/users/favouriteRecipes/add/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
