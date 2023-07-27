@@ -1,8 +1,25 @@
 const fetch = require('node-fetch');
+
 var express = require('express');
 var router = express.Router();
 
 router.get('/', async (req, res, next) => {
+    const recipe = await getAPIRecipe();
+    return res.status(200).send(recipe);
+})
+
+router.get('/ingredients', async (req, res, next) => {
+
+})
+
+router.get('/restrictions', async (req, res, next) => {
+
+})
+
+router.get('/filter', async (req, res, next) => {
+    let filters = req.params;
+    let ingredients = filters.ingredients;
+    let restrictions = filters.restrictions;
     const recipe = await getAPIRecipe();
     return res.status(200).send(recipe);
 })
