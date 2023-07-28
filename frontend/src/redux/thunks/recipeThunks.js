@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { actionTypes } from "redux/actions/actions";
+import { actionTypes } from "redux/actions/actionTypes";
 import RecipeService from "redux/services/recipeService";
 
 export const getRecipeAsync = createAsyncThunk(
