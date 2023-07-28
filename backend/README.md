@@ -37,7 +37,14 @@ Will ignore auth token, can be added later if we really wanted it.
 
 `'/recipes'` - GET - Gets a random recipe
 
+`'/recipes/filter'` - GET - Gets a random recipe based on the filter provided. Pass in the filter query through parameters. Current supported parameters: ingredients (comma separated array)
+
+
+`'/recipes/ingredients'` - GET - Returns the supported ingredients that are found with the query. Pass in the query through parameters: query (string)
+
 --
 
 
 To add: /users/favouriteRecipes/get/:recipeName
+
+`'/recipes/restrictions'` - GET - Returns the supported restrictions
