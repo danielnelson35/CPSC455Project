@@ -1,4 +1,3 @@
-require('dotenv').config();
 const apiURL = process.env.REACT_APP_APIURL || "";
 
 const login = async (user) => {
