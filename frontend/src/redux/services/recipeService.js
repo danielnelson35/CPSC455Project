@@ -1,4 +1,4 @@
-const apiURL = process.env.REACT_APP_APIURL || "http://localhost:3001";
+const apiURL = process.env.REACT_APP_APIURL || "";
 
 const getRecipe = async () => {
     const response = await fetch(`${apiURL}/recipes/`, {
