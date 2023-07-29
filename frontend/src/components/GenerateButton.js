@@ -6,13 +6,13 @@ const GenerateButton = () => {
 
   const dispatch = useDispatch();
 
-  const handleCLick = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
     dispatch(getRecipeAsync());
   }
 
   return (
-    <button id="generatebutton" className="generateRecipeButton" onClick={handleCLick}>Generate Recipe</button>
+    <button id="generatebutton" className="generateRecipeButton" onClick={handleClick}>Generate Recipe</button>
   )
 }
 
