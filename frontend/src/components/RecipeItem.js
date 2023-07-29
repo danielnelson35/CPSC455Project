@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import * as userActions from "redux/thunks/userThunks";
+import { DISPLAY_RECIPE } from "redux/actions/actions";
 
 const RecipeItem = (props) => {
 
@@ -12,9 +13,20 @@ const RecipeItem = (props) => {
         dispatch(userActions.deleteFavouriteRecipe([user.username, recipe.title]));
     }
 
+    const handleDisplay = (e) => {
+        e.preventDefault();
+        dispatch(DISPLAY_RECIPE(recipe));
+    }
+
+
     return (
         <div>
-            {recipe.title}
+            <div>
+            <img src={recipe.image} className="rec" />
+            </div>
+            <div>
+            <button class="link" onClick={handleDisplay}>{recipe.title}</button>
+            </div>
             <button className="deletebutton" onClick={handleDelete}>Delete</button>
         </div>
     )

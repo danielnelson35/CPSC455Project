@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { actionTypes } from "redux/actions/actions";
+import { act } from "react-dom/test-utils";
+import { actionTypes } from "redux/actions/actionTypes";
 import UserService from "redux/services/userService";
 
 export const login = createAsyncThunk(

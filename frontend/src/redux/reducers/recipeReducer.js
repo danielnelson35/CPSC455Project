@@ -55,7 +55,11 @@ const recipe = [
 const recipeStore = createSlice({
     name: "recipe",
     initialState: INITIAL_STATE,
-    reducers: {},
+    reducers: {
+        displayRecipe: (state, action) => {
+            state.recipe = action.payload;
+        }
+    },
     extraReducers: (builder) => {
         builder
         .addCase(getRecipeAsync.pending, (state) => {
@@ -73,5 +77,5 @@ const recipeStore = createSlice({
     }
 });
 
-export const { findRecipe } = recipeStore.actions
+export const { displayRecipe } = recipeStore.actions
 export default recipeStore;
