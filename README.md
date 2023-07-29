@@ -3,7 +3,7 @@ CPSC 455 group project: What Should I Eat
 
 Project Description:
 
-The website will be for hungry people who are in need of recipe ideas. It will generate random recipes or based on what ingredients the user currently has. It will store recipes that have been recommended to the user previously and ingredients the user currently has. They can choose the recipe recommended or choose to skip it. Some additional functionality could be best before dates for ingredients (reminds the user to use them before they expire). 
+The website will be for people who are in need of recipe ideas. It will generate random recipes or based on what ingredients the user currently has. They can choose to save the recipe recommended or generate another one. 
 
 
 Project Task Requirements
