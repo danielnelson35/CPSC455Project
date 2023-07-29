@@ -98,7 +98,7 @@ function parseDirections(recipeDirections) {
         for (let stepNumber in instruction.steps) {
             step = instruction.steps[stepNumber].step;
             num = +stepNumber + 1;
-            directions += `${num}: ${step}\n`;
+            directions += `${num}: ${step}\n\n`;
         }
         directions += "\n"
     }

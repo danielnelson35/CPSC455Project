@@ -11,7 +11,6 @@ const GenerateButton = () => {
   const handleClick = (e) => {
     e.preventDefault();
     if (ingredientsList.length !== 0) {
-      console.log(ingredientsList);
       dispatch(getFilteredRecipeAsync([ingredientsList]));
     } else {
       dispatch(getRecipeAsync());
@@ -19,7 +18,9 @@ const GenerateButton = () => {
   }
 
   return (
-    <button id="generatebutton" className="generateRecipeButton" onClick={handleClick}>Generate Recipe</button>
+    <div className="buttonBox">
+      <button id="generatebutton" className="generateRecipeButton" onClick={handleClick}>Generate Recipe</button>
+    </div>
   )
 }
 

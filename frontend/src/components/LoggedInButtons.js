@@ -24,7 +24,7 @@ const LoggedInButtons = () => {
     if (user.username) {
 
         return (
-            <div>
+            <div className="center">
                 <button className="favouritebutton" onClick={handleClick}>Add to Favourites</button>
                 <div className="favourites">{user.favouriteRecipes.length > 0 && user.favouriteRecipes.map((recipe) => (
                     recipe && <RecipeItem recipe={recipe} key={recipe.title} />
@@ -35,7 +35,7 @@ const LoggedInButtons = () => {
         )
     } else {
         return (
-            <div>
+            <div className="center">
                 <p className="single-line">Login to see favourites</p>
             </div>
         )
