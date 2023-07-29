@@ -52,24 +52,25 @@ const AddRecipeForm = () => {
 
   return (
     <form>
-      Recipe Name: <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
-      Image: <input type="text" value={image} onChange={(e) => setImage(e.target.value)} /><br />
+      Recipe Name: <input className="form" type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
+      Image: <input className="form" type="text" value={image} onChange={(e) => setImage(e.target.value)} /><br />
       Ingredients:<br />
       {ingredients.map((ingredient) => (
         <div key={ingredient.id}>
           <input
+          className="form"
             type="text"
             value={ingredient.value}
             onChange={(e) => handleIngredientChange(ingredient.id, e)}
           />
-          <input type="button"  onClick={() => removeIngredients(ingredient.id)} value="Delete" />
+          <input className="formButton" type="button" onClick={() => removeIngredients(ingredient.id)} value="Delete" />
         </div>
       ))}
-      <input type="button" onClick={addIngredients} value="Add New Ingredient" /><br />
-      Directions: <input type="text" value={directions} onChange={(e) => setDirections(e.target.value)} /><br />
+      <input className="button" type="button" onClick={addIngredients} value="Add New Ingredient" /><br />
+      Directions: <input className="form" type="text" value={directions} onChange={(e) => setDirections(e.target.value)} /><br />
       <div className="buttons">
-        <input type="button" onClick={submitForm} value="Submit" />
-        <input type="button" onClick={clearForm} value="Clear" />
+        <input className="formButton" type="button" onClick={submitForm} value="Submit" />
+        <input className="formButton" type="button" onClick={clearForm} value="Clear" />
       </div>
     </form>
   );

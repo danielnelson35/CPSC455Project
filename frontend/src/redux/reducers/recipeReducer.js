@@ -63,7 +63,11 @@ const recipeStore = createSlice({
             })
             .addCase(getSuggestionsAsync.fulfilled, (state, action) => {
                 state.getSuggestions = REQUEST_STATE.FULFILLED;
-                state.suggestions = action.payload;
+                if (action.payload) {
+                    state.suggestions = action.payload;
+                } else {
+                    state.suggestions = [];
+                }
             })
             .addCase(getSuggestionsAsync.rejected, (state, action) => {
                 state.getSuggestions = REQUEST_STATE.REJECTED;

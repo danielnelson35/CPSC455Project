@@ -11,6 +11,7 @@ const RecipeItem = (props) => {
     const handleDelete = (e) => {
         e.preventDefault();
         dispatch(userActions.deleteFavouriteRecipe([user.username, recipe.title]));
+        e.stopPropagation();    
     }
 
     const handleDisplay = (e) => {
@@ -20,12 +21,12 @@ const RecipeItem = (props) => {
 
 
     return (
-        <div>
-            <div>
-            <img src={recipe.image} className="rec" />
+        <div className="favouriteRecipeItem clickable" onClick={handleDisplay}>
+            <div >
+                <img src={recipe.image} className="rec" />
             </div>
             <div>
-            <button class="link" onClick={handleDisplay}>{recipe.title}</button>
+                <p className="link">{recipe.title}</p>
             </div>
             <button className="deletebutton" onClick={handleDelete}>Delete</button>
         </div>

@@ -1,13 +1,18 @@
 .Frontpage {
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
+  background-image: url("https://images.pexels.com/photos/1028598/pexels-photo-1028598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  position:relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .App {
-  background-color: #e2f0f9;
   min-height: 100vh;
   display: flex;
-  font-size: calc(10px + 2vmin);
+}
+
+.center {
   text-align: center;
 }
 
@@ -22,8 +27,22 @@
   transition: background-color 0.3s ease;
 }
 
+.RecipeCard h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.RecipeCard h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
 .RecipeCard img {
-  max-width: 30vw;
+  max-width: 15vw;
+}
+
+.RecipeCard .imageBox {
+  text-align: center;
 }
 
 .homepageButton {
@@ -72,8 +91,69 @@
 
 .ingredientsdiv, .allergiesdiv {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr;
   padding: 5px 10px;
+}
+
+.ingredientsdiv li {
+  list-style-type: none;
+  justify-content: left;
+}
+
+.ingredientslist {
+  position: absolute;
+  margin-top: 20px;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: row;
+  overflow: visible;
+}
+
+.ingredientslist ul {
+  padding: 0;
+}
+
+.ingredientslist ul div {
+  display: inline;
+}
+
+.ingredientslist ul div li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.ingredientslist div {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.dropdown {
+  width: 90%;
+  padding: 1px 10px;
+  margin-left: 10px;
+  margin-top: 1px;
+}
+
+.dropdown ul {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.dropdown li {
+  padding-left: 5px;
+}
+
+.dropdown li:hover {
+  background-color: lightgray;
+  color: black;
+  cursor: pointer;
 }
 
 #ingredients, #allergies {
@@ -157,6 +237,10 @@ input[type=text] {
   width: 65%;
 }
 
+.right .buttonBox {
+  text-align: center;
+}
+
 .favouritebutton {
   background-color: #286fb4;
   border: none;
@@ -201,13 +285,19 @@ input[type=text] {
 
 .favourites {
   border: 1px solid black;
-  padding: 50px;
+  padding: 30px;
   transition-duration: 0.5s;
   border-radius: 5px;
   transition: background-color 0.3s ease;
   margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: 45px;
   background-color: #ffffff;
+}
+
+.favourites form input[type=text] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .instructions {
@@ -215,12 +305,21 @@ input[type=text] {
   transition-duration: 0.5s;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-top: 30px;
-  font-size: 22px;
+  font-size: 16px;
+  white-space: pre-line;
+  line-height: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.ingredients{
-  font-size: 22px;
+.ingredients {
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.ingredients ul {
+  columns: 3
 }
 
 h2 {
@@ -233,13 +332,104 @@ h3 {
 }
 
 .rec {
-  width: 30%;
+  width: 8vw;
 }
 
 .link {
-  color: 'white';
-  padding-top: '600px';
-  font-size: '50px';
-  font-weight: 'bolder';
+  padding-left: 8px;
+  padding-right: 8px;
   text-align: center;
+}
+
+.clickable :hover {
+  cursor: pointer;
+}
+
+.addButton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin-right: 30px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.formButton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.favouriteRecipeItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form {
+  margin: 12px;
+}
+
+
+.button {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  margin-right: 10px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
+.clearButton {
+  background-color: #286fb4;
+  border: none;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.5s;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }

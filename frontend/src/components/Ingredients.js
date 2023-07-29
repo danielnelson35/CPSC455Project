@@ -36,26 +36,31 @@ const Ingredients = () => {
                 id="ingredients"
                 onChange={onChangeHandler}
                 value={userInput}
-                onBlur={() => {
-                    setTimeout(() => {
-                        dispatch(clearSuggestions());
-                    }, 100);
-                }}
+                // onBlur={() => {
+                //     setTimeout(() => {
+                //         dispatch(clearSuggestions());
+                //     }, 100);
+                // }}
             />
-            <input type="submit" value="Add" onClick={() => handleSubmit(userInput)} />
-            <ul>
-                {ingredients && ingredients.map((ingredient, i) => (
-                    <div className={ingredient} key={i}>
-                        <li key={i}>{ingredient}</li>
-                        <input type="button" value="x" onClick={() => handleRemove(ingredient)}/>
-                    </div>
-                ))}
-            </ul>
-            <ul>
-                {suggestions && suggestions.map((suggestion, i) => (
-                    <li key={i} onClick={() => onSuggestionHandler(suggestion.name)}>{suggestion.name}</li>
-                ))}
-            </ul>
+            <input className="addButton" type="submit" value="Add" onClick={() => handleSubmit(userInput)} />
+            <div className="ingredientslist">
+                <ul>
+                    {ingredients && ingredients.map((ingredient, i) => (
+                        <div className={ingredient} key={i}>
+                            <li key={i}>{ingredient}</li>
+                            <input className="addButton" type="button" value="x" onClick={() => handleRemove(ingredient)} />
+                        </div>
+                    ))}
+                </ul>
+            </div>
+            <div> </div>
+            <div className="dropdown">
+                <ul>
+                    {suggestions && suggestions.map((suggestion, i) => (
+                        <li key={i} onClick={() => onSuggestionHandler(suggestion.name)}>{suggestion.name}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

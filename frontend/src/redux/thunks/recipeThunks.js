@@ -12,7 +12,6 @@ export const getRecipeAsync = createAsyncThunk(
 export const getFilteredRecipeAsync = createAsyncThunk(
     actionTypes.GET_FILTERED_RECIPE,
     async ([ingredients]) => {
-        console.log(ingredients)
         return await RecipeService.getFilteredRecipe(ingredients);
     }
 );
