@@ -24,6 +24,9 @@ const recipeStore = createSlice({
         },
         removeIngredient: (state, action) => {
             state.ingredientsList = state.ingredientsList.filter((ingredient) => ingredient != action.payload);
+        },
+        displayRecipe: (state, action) => {
+            state.recipe = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -68,7 +71,7 @@ const recipeStore = createSlice({
                 state.suggestions = [];
             });
     }
-});
+    });
 
-export const { clearSuggestions: clearSuggestions, addIngredient: addIngredient, removeIngredient: removeIngredient } = recipeStore.actions
+export const { clearSuggestions: clearSuggestions, addIngredient: addIngredient, removeIngredient: removeIngredient, displayRecipe: displayRecipe } = recipeStore.actions
 export default recipeStore;

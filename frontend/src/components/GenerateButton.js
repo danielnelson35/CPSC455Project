@@ -8,7 +8,7 @@ const GenerateButton = () => {
 
   const dispatch = useDispatch();
 
-  const handleCLick = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
     if (ingredientsList.length !== 0) {
       console.log(ingredientsList);
@@ -19,7 +19,7 @@ const GenerateButton = () => {
   }
 
   return (
-    <button id="generatebutton" className="generateRecipeButton" onClick={handleCLick}>Generate Recipe</button>
+    <button id="generatebutton" className="generateRecipeButton" onClick={handleClick}>Generate Recipe</button>
   )
 }
 

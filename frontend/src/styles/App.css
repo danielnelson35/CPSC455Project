@@ -228,6 +228,18 @@ h2 {
   padding-bottom: 5px;
   }
 
-  h3 {
-    font-size: 30px;
-  }
+h3 {
+  font-size: 30px;
+}
+
+.rec {
+  width: 30%;
+}
+
+.link {
+  color: 'white';
+  padding-top: '600px';
+  font-size: '50px';
+  font-weight: 'bolder';
+  text-align: center;
+}

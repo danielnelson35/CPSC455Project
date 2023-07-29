@@ -5,5 +5,6 @@ export const actionTypes = {
     LOGIN: 'user/login',
     ADD_FAVOURITE_RECIPE: 'user/addFavouriteRecipe',
     DELETE_FAVOURITE_RECIPE: 'user/deleteFavouriteRecipe',
-    GET_FAVOURITE_RECIPES: 'user/getFavouriteRecipes'
+    GET_FAVOURITE_RECIPES: 'user/getFavouriteRecipes',
+    DISPLAY_RECIPE: 'recipe/displayRecipe'
 }
