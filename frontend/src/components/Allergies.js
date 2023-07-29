@@ -1,11 +1,18 @@
+import { useDispatch, useSelector } from "react-redux";
+import { getSuggestionsAsync } from "redux/thunks/recipeThunks";
 
 const Allergies = () => {
+    const dispatch = useDispatch();
+    dispatch(getSuggestionsAsync());
+    
+    const allergyList = useSelector(state => state.recipeStore.suggestions)
     return (
         <div className="allergiesdiv">
             <label for="allergies">Allergies:</label>
             <select name="allergies" id="allergies">
-                <option value="allergy1">allergy1</option>
-                <option value="allergy2">allergy2</option>
+                {allergyList.length > 0 && allergyList.map((allergy) => (
+                        <option value={allergy}>{allergy}</option>
+                    ))}
             </select>
         </div>
     )
