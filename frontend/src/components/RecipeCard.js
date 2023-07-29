@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 
+
 // props can have: title, image, description
 export default function RecipeCard() {
     const recipe = useSelector(state => state.recipeStore.recipe);
@@ -8,6 +9,7 @@ export default function RecipeCard() {
             <></>
         )
     }
+
     return (
         <div className="RecipeCard">
             <h2> {recipe.title} </h2>
@@ -20,7 +22,9 @@ export default function RecipeCard() {
             </div>
             <div className="instructions">
                 <h3>Directions</h3>
-                <div className="steps"> {recipe.directions} </div>
+                <div className="steps" style={{ whiteSpace: 'pre-wrap'}}>
+                    {recipe.directions}
+                </div>
             </div>
         </div>
     )

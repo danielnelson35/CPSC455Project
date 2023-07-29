@@ -22,7 +22,6 @@ export default function Home() {
           <div className='right'>
             <GenerateButton />
             <Ingredients />
-            <Allergies />
             <RecipeCard />
           </div>
         </div>
