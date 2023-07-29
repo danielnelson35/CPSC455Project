@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import * as userActions from "redux/thunks/userThunks";
 import RecipeItem from "./RecipeItem";
+import AddRecipeForm from './AddRecipeForm';
 
 const LoggedInButtons = () => {
     const user = useSelector(state => state.userStore.user);
@@ -29,6 +30,7 @@ const LoggedInButtons = () => {
                     recipe && <RecipeItem recipe={recipe} key={recipe.title} />
                 ))}
                 </div>
+                <div className="favourites"><AddRecipeForm /></div>
             </div>
         )
     } else {
