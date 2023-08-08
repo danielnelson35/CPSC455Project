@@ -1,5 +1,4 @@
-# CPSC455Project
-CPSC 455 group project: What Should I Eat
+# What Should I Eat
 
 Project Description:
 
@@ -8,36 +7,54 @@ The website will be for people who are in need of recipe ideas. It will generate
 
 Project Task Requirements
 ○ minimal requirements (will definitely complete) 
-- use API calls to a website to get recipe (https://developer.edamam.com/edamam-recipe-api)
-- Skip a recipe 
-- Store favoured recipes 
-- User profile - with just their favoured recipes 
-- Recommend a recipe from favoured recipes 
+✅ use API calls to a website to get recipe (https://developer.edamam.com/edamam-recipe-api)
+✅ Skip a recipe 
+✅ Store favoured recipes 
+✅ User profile - with just their favoured recipes 
+✅ Recommend a recipe from favoured recipes 
 
 ○ "standard" requirements (will most likely complete) 
-- Setting up the webpage to take user input (add ingredients and it will output a recipe based on those ingredients) 
-- select what type of cuisine/ingredient and filter based on that 
-- Exclude allergies
-- User profile - with ingredients, recipes 
-- Make their own recipes and store that in their favoured recipes
+✅ Setting up the webpage to take user input (add ingredients and it will output a recipe based on those ingredients) 
+✅ Enter ingredients and filter based on that 
+✅ Exclude allergies
+✅ User profile - with ingredients, recipes 
+✅ Make their own recipes and store that in their favoured recipes
 
 ○ stretch requirements (plan to complete at least 1!)
-- use chatGPT for recipes on the internet
-- Remind user of soon-to-expire ingredients
-- Automate reduction of ingredients (user profile)
+❌  use chatGPT for recipes on the internet
+❌  Remind user of soon-to-expire ingredients
+❌  Automate reduction of ingredients (user profile)
+
+
+Tech 
+Unit 1 - HTML, CSS, JS 
+
+Unit 2 - React/Redux 
+
+Unit 3 - Node/Express 
+
+MongoDB - 
+
+Render - 
+
+
+Next Steps
+Potential future directions for development .... 
+ 
 
 
 
-Project Task Breakdown
-1. use API calls to websites to get recipe
-- Choose an API
-- Get it working on command line (ensure backend is working correctly)
-- Manipulate the json 
-- Populate the frontend with the resulting json
-2. Favourited recipes 
-- Store user ID + recipe in cache/temp storage
-- Favourite button calls backend?
-- Move recipe from cache/temp storage into user storage/recipe storage pk recipe/fk user?
+Task Breakdown
+Daniel -
+
+Elton -
+
+Angela -
+
+Jason - 
+
+
+
 
 Protocol
 
