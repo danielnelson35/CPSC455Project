@@ -4,36 +4,41 @@ import { useSelector, useDispatch } from "react-redux";
 import { addFavouriteRecipe } from "redux/thunks/userThunks";
 
 const AddRecipeForm = () => {
-    const dispatch = useDispatch();
-    const [title, setTitle] = useState('');
-    const [image, setImage] = useState('');
-    const [ingredients, setIngredients] = useState([]);
-    const [count, setCount] = useState(0);
-    const [directions, setDirections] = useState('');
-    const user = useSelector(state => state.userStore.user);
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+  const [image, setImage] = useState('');
+  const [ingredients, setIngredients] = useState([]);
+  const [count, setCount] = useState(0);
+  const [directions, setDirections] = useState('');
+  const user = useSelector(state => state.userStore.user);
 
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(addFavouriteRecipe([user.username, {title: title,
-                                                 image: image,
-                                                 ingredients: ingredients.map(ingredient => ingredient.value),
-                                                 directions: directions}]));
+    dispatch(addFavouriteRecipe([
+      user.username,
+      {
+        title: title,
+        image: image,
+        ingredients: ingredients.map(ingredient => ingredient.value),
+        directions: directions
+      }
+    ]));
     clearForm();
   };
 
   const handleIngredientChange = (ingredientID, e) => {
     var updatedIngredients = [...ingredients];
     for (var ingredient of updatedIngredients) {
-        if (ingredient.id == ingredientID) {
-            ingredient.value = e.target.value;
-        }
+      if (ingredient.id == ingredientID) {
+        ingredient.value = e.target.value;
+      }
     }
     setIngredients(updatedIngredients);
   };
 
   const addIngredients = () => {
     var newIngredientsID = count;
-    setIngredients([...ingredients, {id: newIngredientsID, value: ""}]);
+    setIngredients([...ingredients, { id: newIngredientsID, value: "" }]);
     setCount(count + 1);
   };
 
@@ -58,7 +63,7 @@ const AddRecipeForm = () => {
       {ingredients.map((ingredient) => (
         <div key={ingredient.id}>
           <input
-          className="form"
+            className="form"
             type="text"
             value={ingredient.value}
             onChange={(e) => handleIngredientChange(ingredient.id, e)}

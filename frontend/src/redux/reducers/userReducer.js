@@ -77,7 +77,7 @@ const userStore = createSlice({
                 state.addFavouriteRecipe = REQUEST_STATE.REJECTED;
                 state.error = action.payload;
             })
-    } // For thunks
+    }
 });
 
 export const { setUsername, setUserImage, addRecipe } = userStore.actions

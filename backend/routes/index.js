@@ -12,8 +12,7 @@ router.post('/login', async (req, res, next) => {
 
     let username = body.username;
 
-    //TODO: check if user exists and login else
-    let user = await queries.getUser(username); // TODO: error handling
+    let user = await queries.getUser(username);
 
     let exists = (user) ? true : false;
 

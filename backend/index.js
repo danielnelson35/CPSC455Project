@@ -1,6 +1,5 @@
 require('dotenv').config();
 
-// Server setup
 const express = require('express');
 
 const app = express();
@@ -11,7 +10,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 setupMiddleware();
 setupRoutes();
 
-// Middleware
+
 function setupMiddleware() {
     const cors = require('cors');
 
@@ -19,7 +18,7 @@ function setupMiddleware() {
     app.use(cors());
 }
 
-// Routes
+
 function setupRoutes() {
     const indexRouter = require('./routes/index');
     const recipeRouter = require('./routes/recipes');
