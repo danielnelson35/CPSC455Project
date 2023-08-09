@@ -1,5 +1,4 @@
 # What Should I Eat
-
 The application is designed for individuals seeking cooking inspiration. It will provide users with the option to receive spontaneous recipe suggestions or ones tailored to their available ingredients or allergies. Users can opt to save suggested recipes or request new ones.
 
 
@@ -9,6 +8,7 @@ The website will be for people who are in need of recipe ideas. It will generate
 
 
 ## Project Task Requirements
+
 
 ### Minimal Requirements
 
@@ -86,3 +86,8 @@ Angela - I reorganized the main and profile page. Added thumbnail for list of fa
 Jason - Worked on setting up the mongoDB and connecting it to the backend. Created an user input form to add their own recipe. Deployed both the frontend and backend via Render.
 
 
+Protocol
+
+![image](https://github.com/danielnelson35/CPSC455Project/assets/28066750/9fcfd8ce-cc2e-4d30-9892-1e8d57cf0ba5)
+
+![image](https://github.com/danielnelson35/CPSC455Project/assets/28066750/36271027-3e07-4306-ad77-030c8b1e0c10)

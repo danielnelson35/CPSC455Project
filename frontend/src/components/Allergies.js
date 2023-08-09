@@ -47,8 +47,6 @@ const Allergies = () => {
             </div>
 
         </div>
-
-
     )
 }
 

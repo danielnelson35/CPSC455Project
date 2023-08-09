@@ -13,7 +13,6 @@ const GenerateButton = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-
     if (ingredientsList.length !== 0 || restrictionsList.length !== 0) {
       dispatch(getFilteredRecipeAsync([ingredientsList, restrictionsList]));
     } else {
