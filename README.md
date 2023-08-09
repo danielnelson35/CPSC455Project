@@ -8,28 +8,44 @@ The website will be for people who are in need of recipe ideas. It will generate
 
 
 Project Task Requirements
+
 ○ minimal requirements (will definitely complete) 
+
 ✅ use API calls to a website to get recipe (https://developer.edamam.com/edamam-recipe-api)
+
 ✅ Skip a recipe 
+
 ✅ Store favoured recipes 
+
 ✅ User profile - with just their favoured recipes 
+
 ✅ Recommend a recipe from favoured recipes 
 
+
 ○ "standard" requirements (will most likely complete) 
+
 ✅ Setting up the webpage to take user input (add ingredients and it will output a recipe based on those ingredients) 
+
 ✅ Enter ingredients and filter based on that 
+
 ✅ Exclude allergies
+
 ✅ User profile - with ingredients, recipes 
+
 ✅ Make their own recipes and store that in their favoured recipes
 
+
 ○ stretch requirements (plan to complete at least 1!)
+
 ❌  use chatGPT for recipes on the internet
+
 ❌  Remind user of soon-to-expire ingredients
+
 ❌  Automate reduction of ingredients (user profile)
 
-
 Tech 
-Unit 1 - HTML, CSS, JS 
+
+Unit 1 - HTML, CSS, JS - These 3 
 
 Unit 2 - React/Redux 
 
@@ -40,13 +56,16 @@ MongoDB -
 Render - 
 
 
+
 Next Steps
+
 Potential future directions for development .... 
  
 
 
 
 Task Breakdown
+
 Daniel -
 
 Elton -
@@ -63,5 +82,3 @@ Protocol
 ![image](https://github.com/danielnelson35/CPSC455Project/assets/28066750/9fcfd8ce-cc2e-4d30-9892-1e8d57cf0ba5)
 
 ![image](https://github.com/danielnelson35/CPSC455Project/assets/28066750/36271027-3e07-4306-ad77-030c8b1e0c10)
-
-

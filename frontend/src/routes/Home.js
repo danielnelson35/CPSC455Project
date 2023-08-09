@@ -4,7 +4,7 @@ import ProfilePreview from 'components/ProfilePreview';
 import GenerateButton from 'components/GenerateButton';
 import LoggedInButtons from 'components/LoggedInButtons';
 import Ingredients from 'components/Ingredients';
-import { useSelector } from 'react-redux';
+import Allergies from 'components/Allergies';
 
 export default function Home() {
   return (
@@ -21,6 +21,7 @@ export default function Home() {
           <div className='right'>
             <GenerateButton />
             <Ingredients />
+            <Allergies />
             <RecipeCard />
           </div>
 

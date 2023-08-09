@@ -1,7 +1,3 @@
-Will ignore auth token, can be added later if we really wanted it.
-
-
-
 `'/users/favouriteRecipes/add'` - POST - Add favourite recipe to user - body should be the recipe in json. { username: "", recipe: {}, ... }
 
 `'/users/favouriteRecipes/all/:username'` - GET - Get all favourite recipes for a user
@@ -42,9 +38,6 @@ Will ignore auth token, can be added later if we really wanted it.
 
 `'/recipes/ingredients'` - GET - Returns the supported ingredients that are found with the query. Pass in the query through parameters: query (string)
 
---
-
-
-To add: /users/favouriteRecipes/get/:recipeName
-
 `'/recipes/restrictions'` - GET - Returns the supported restrictions
+
+

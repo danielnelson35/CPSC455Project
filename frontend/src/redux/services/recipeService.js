@@ -7,16 +7,23 @@ const getRecipe = async () => {
     return response.json();
 };
 
-const getFilteredRecipe = async (ingredients) => {
+const getFilteredRecipe = async (ingredients, restrictions) => {
     let ingredientsString = ingredients.join(",");
     let uri = `${apiURL}/recipes/filter?`
     let params = new URLSearchParams({
-        ingredients: ingredientsString
+        ingredients: ingredientsString,
+        restrictions: restrictions
     })
     const response = await fetch(uri + params, { 
         method: "GET" 
     });
-    return response.json();
+    return response.json().then((res) => {
+        if (!response.ok) {
+            throw res;
+        }
+
+        return res;
+    });
 }
 
 const getSuggestions = async (input) => {
@@ -30,8 +37,17 @@ const getSuggestions = async (input) => {
     return response.json();
 }
 
+const getRestrictions = async (input) => {
+    let uri = `${apiURL}/recipes/restrictions`
+    const response = await fetch(uri, {
+        method: 'GET'
+    });
+    return response.json();
+}
+
 export default {
     getRecipe,
     getSuggestions: getSuggestions,
-    getFilteredRecipe
+    getFilteredRecipe,
+    getRestrictions
 }

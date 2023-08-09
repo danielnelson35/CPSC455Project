@@ -58,9 +58,21 @@ const addToFavouriteRecipes = async (username, recipe) => {
     });
 };
 
+const getRandomFavourite = async (username) => {
+    const response = await fetch(`${apiURL}/users/favouriteRecipes/random/${username}`);
+    return response.json().then((res) => {
+        if (!response.ok) {
+            throw res;
+        }
+
+        return res;
+    })
+}
+
 export default {
     login,
     deleteRecipe,
     getRecipes,
-    addToFavouriteRecipes
+    addToFavouriteRecipes,
+    getRandomFavourite
 }
