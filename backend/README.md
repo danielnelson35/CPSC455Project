@@ -25,7 +25,7 @@
     field2: "", 
     ...
 }
-``````
+```
 
 `'/login/'` - POST - Login - should have the username of the user in the body `{ username: "" }` (Other fields can be added later as needed.)
 

@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
 import { REQUEST_STATE } from "redux/utils";
 
-
-// props can have: title, image, description
 export default function RecipeCard() {
     const recipeStore = useSelector(state => state.recipeStore);
     const recipe = recipeStore.recipe;
