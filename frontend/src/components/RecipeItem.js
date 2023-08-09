@@ -28,7 +28,7 @@ const RecipeItem = (props) => {
             <div>
                 <p className="link">{recipe.title}</p>
             </div>
-            <button className="deletebutton" onClick={handleDelete}>Delete</button>
+            <button className="deletebutton" onClick={handleDelete}>X</button>
         </div>
     )
 }

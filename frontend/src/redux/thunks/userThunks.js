@@ -30,3 +30,10 @@ export const getFavouriteRecipes = createAsyncThunk(
     async (username) => {
         return await UserService.getRecipes(username)
     });
+
+export const getRandomFavourite = createAsyncThunk(
+    actionTypes.GET_RANDOM_FAVOURITE,
+    async (username) => {
+        return await UserService.getRandomFavourite(username);
+    }
+)

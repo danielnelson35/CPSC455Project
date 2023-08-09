@@ -1,17 +1,20 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getRecipeAsync, getFilteredRecipeAsync } from "redux/thunks/recipeThunks";
 
 const GenerateButton = () => {
 
-  const ingredientsList = useSelector(state => state.recipeStore.ingredientsList);
+  const recipeStore = useSelector(state => state.recipeStore);
+
+
+  const ingredientsList = recipeStore.ingredientsList;
+  const restrictionsList = recipeStore.restrictionsList;
 
   const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (ingredientsList.length !== 0) {
-      dispatch(getFilteredRecipeAsync([ingredientsList]));
+    if (ingredientsList.length !== 0 || restrictionsList.length !== 0) {
+      dispatch(getFilteredRecipeAsync([ingredientsList, restrictionsList]));
     } else {
       dispatch(getRecipeAsync());
     }

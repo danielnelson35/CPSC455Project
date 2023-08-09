@@ -11,8 +11,12 @@ export const getRecipeAsync = createAsyncThunk(
 
 export const getFilteredRecipeAsync = createAsyncThunk(
     actionTypes.GET_FILTERED_RECIPE,
-    async ([ingredients]) => {
-        return await RecipeService.getFilteredRecipe(ingredients);
+    async ([ingredients, restrictions], {rejectWithValue}) => {
+        try {
+            return await RecipeService.getFilteredRecipe(ingredients, restrictions);
+        } catch (err) {
+            return rejectWithValue(err);
+        }
     }
 );
 
@@ -20,5 +24,12 @@ export const getSuggestionsAsync = createAsyncThunk(
     actionTypes.GET_INGREDIENTS_LIST,
     async (input) => {
         return await RecipeService.getSuggestions(input);
+    }
+)
+
+export const getRestrictionsAsync = createAsyncThunk(
+    actionTypes.GET_RESTRICTIONS_LIST,
+    async (input) => {
+        return await RecipeService.getRestrictions(input);
     }
 )

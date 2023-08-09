@@ -33,19 +33,23 @@ router.get('/ingredients', async (req, res, next) => {
     return res.status(200).send(await response.json());
 })
 
-// router.get('/restrictions', async (req, res, next) => {
+router.get('/restrictions', async (req, res, next) => {
+    const intolerances = ["Dairy", "Egg", "Gluten", "Grain", "Peanut", "Seafood", "Sesame", "Shellfish", "Soy", "Sulfite", "Tree Nut", "Wheat"];
 
-// })
+    return res.status(200).send(intolerances);
+})
 
 router.get('/filter', async (req, res, next) => {
     let filters = req.query;
     let ingredientSearch = filters.ingredients;
+    let restrictions = filters.restrictions;
 
 
     let uri = `${process.env.filteredRecipeAPIURI}/recipes/complexSearch?`;
     let params = new URLSearchParams({
         query: ingredientSearch.split(",")[0],
         includeIngredients: ingredientSearch,
+        intolerances: restrictions,
         instructionsRequired: true,
         number: 20,
         sort: "random",
@@ -110,6 +114,7 @@ const getAPIRecipe = async () => {
     const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php', {
         method: 'GET'
     });
+    console.log('response:', response);
     const responseData = await response.json();
     const data = responseData.meals[0];
     const ingredientsList = [];
