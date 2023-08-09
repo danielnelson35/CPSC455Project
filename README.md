@@ -2,7 +2,6 @@
 
 The application is designed for individuals seeking cooking inspiration. It will provide users with the option to receive spontaneous recipe suggestions or ones tailored to their available ingredients or allergies. Users can opt to save suggested recipes or request new ones.
 
-
 Project Description:
 
 The website will be for people who are in need of recipe ideas. It will generate random recipes or based on what ingredients the user currently has. They can choose to save the recipe recommended or generate another one. 
@@ -43,8 +42,6 @@ Project Task Requirements
 ❌  Remind user of soon-to-expire ingredients
 
 ❌  Automate reduction of ingredients (user profile)
-
-
 
 Tech 
 
