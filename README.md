@@ -1,5 +1,6 @@
 # What Should I Eat
 The application is designed for individuals seeking cooking inspiration. It will provide users with the option to receive spontaneous recipe suggestions or ones tailored to their available ingredients or allergies. Users can opt to save suggested recipes or request new ones.
+https://teamrecipe.onrender.com/
 
 
 ## Project Description
